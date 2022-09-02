@@ -1,22 +1,16 @@
-use std::env;
+#[macro_use] extern crate rocket;
 
-mod ape;
+#[get("/")]
+fn ape_to_json() -> &'static str {
+    "placeholder response for GET"
+}
 
-fn main() {
-    let args: Vec<_> = env::args().collect();
+#[post("/")]
+fn ape_to_json_post() -> &'static str {
+    "placeholder response for POST request"
+}
 
-    if args.len() != 3 {
-        panic!("You need to pass height and wingspan!");
-    }
-
-    let height: u32 = args[1].parse::<u32>().unwrap();
-    let wingspan: u32 = args[2].parse::<u32>().unwrap();
-
-    if height < 1 || wingspan < 1 {
-        panic!("height or wingspan found to be unreasonably short (debug: height {}, wingspan {})", height, wingspan);
-    }
-
-    let ape_index = ape::ape_index(height, wingspan);
-
-    println!("ape index: {ape_index}");
+#[launch]
+fn webapi() -> _ {
+    rocket::build().mount("/api", routes![ape_to_json, ape_to_json_post])
 }
