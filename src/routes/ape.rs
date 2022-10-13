@@ -18,7 +18,7 @@ pub struct ApeIndexOutput {
     pub ape_index: f32
 }
 
-#[post("/ape", format = "application/x-www-form-urlencoded", data = "<ape_data>")]
+#[post("/ape", format = "application/json", data = "<ape_data>")]
 pub fn ape_to_json_post(ape_data: Json<ApeIndexInput>) -> Json<ApeIndexOutput> {
     Json(ape_index_from_json(ape_data))
 }
