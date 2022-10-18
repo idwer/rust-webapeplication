@@ -10,14 +10,12 @@ use rocket::serde::Serialize;
 use crate::lib::ape::ape_index_from_json;
 
 #[derive(Deserialize, Serialize)]
-#[serde(crate = "rocket::serde")]
 pub struct ApeIndexInput {
     pub height: u32,
     pub wingspan: u32
 }
 
 #[derive(Deserialize, Serialize)]
-#[serde(crate = "rocket::serde")]
 pub struct ApeIndexOutput {
     pub height: u32,
     pub wingspan: u32,
