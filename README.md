@@ -10,8 +10,4 @@ cargo run
 curl --header 'Content-Type: application/json' http://127.0.0.1:8080/ape -X POST -d '{"height": 200, "wingspan": 200}'
 
 # JSON output:
-{
-   "ape_index" : 1,
-   "height" : 200,
-   "wingspan" : 200
-}
+{"height":200,"wingspan":200,"ape_index":1.0}
