@@ -1,6 +1,7 @@
 use actix_web::web::Json;
 
-use crate::routes::ape::{ApeIndexInput, ApeIndexOutput};
+use crate::lib::structs::ApeIndexInput;
+use crate::lib::structs::ApeIndexOutput;
 
 fn ape_index(h: u32, w: u32) -> f32 {
     w as f32 / h as f32
