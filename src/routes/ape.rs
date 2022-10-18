@@ -1,5 +1,11 @@
-use rocket::serde::{Deserialize, Serialize};
-use rocket::serde::json::Json;
+use actix_web::post;
+use actix_web::HttpResponse;
+use actix_web::Responder;
+
+use actix_web::web::Json;
+
+use rocket::serde::Deserialize;
+use rocket::serde::Serialize;
 
 use crate::lib::ape::ape_index_from_json;
 
@@ -18,7 +24,7 @@ pub struct ApeIndexOutput {
     pub ape_index: f32
 }
 
-#[post("/ape", format = "application/json", data = "<ape_data>")]
-pub fn ape_to_json_post(ape_data: Json<ApeIndexInput>) -> Json<ApeIndexOutput> {
-    Json(ape_index_from_json(ape_data))
+#[post("/ape")]
+async fn ape_to_json_post(ape_data: Json<ApeIndexInput>) -> impl Responder {
+    HttpResponse::Ok().json(ape_index_from_json(ape_data))
 }

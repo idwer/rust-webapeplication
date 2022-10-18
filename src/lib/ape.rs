@@ -1,4 +1,4 @@
-use rocket::serde::json::Json;
+use actix_web::web::Json;
 
 use crate::routes::ape::{ApeIndexInput, ApeIndexOutput};
 
