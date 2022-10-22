@@ -1,1 +1,1 @@
-'{"height": 200, "wingspan": 200}'
+{"height": 200, "wingspan": 200}'
