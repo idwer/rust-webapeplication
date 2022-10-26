@@ -20,7 +20,7 @@ def endpoint_post() -> str:
     # return 7 decimals, like Rust returns
     ape_index = float("{:.7f}".format(ape_index))
 
-    return {'height': height, 'wingspan': wingspan, 'ape_index': ape_index}
+    return json.dumps({'height': height, 'wingspan': wingspan, 'ape_index': ape_index})
 
 
 if __name__ == "__main__":
