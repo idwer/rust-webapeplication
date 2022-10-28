@@ -1,6 +1,9 @@
 all: build check test
 	
 build:
+	cargo build
+
+build_rel:
 	cargo build --release
 
 check:
