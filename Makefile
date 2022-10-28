@@ -9,6 +9,9 @@ build_rel:
 check:
 	cargo check
 
+check_rel:
+	cargo check -r
+
 run_log:
 	RUST_LOG=actix_web=info cargo run
 
