@@ -11,7 +11,7 @@ pub fn ape_index_from_json(ape_data: Json<ApeIndexInput>) -> ApeIndexOutput {
     ApeIndexOutput {
         height: ape_data.height,
         wingspan: ape_data.wingspan,
-        ape_index: ape_index(ape_data.height, ape_data.wingspan)
+        ape_index: ape_index(ape_data.height, ape_data.wingspan),
     }
 }
 
