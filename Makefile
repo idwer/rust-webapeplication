@@ -20,3 +20,6 @@ run_log_release:
 
 test:
 	cargo test
+
+test_rel:
+	cargo test -r
