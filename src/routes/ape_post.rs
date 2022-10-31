@@ -10,5 +10,7 @@ use crate::lib::structs::ApeIndexInput;
 
 #[post("/ape")]
 async fn ape_to_json_post(ape_data: Json<ApeIndexInput>) -> impl Responder {
-    HttpResponse::Ok().json(ape_index_from_json(ape_data))
+    HttpResponse::Ok()
+    .content_type("application/json")
+    .json(ape_index_from_json(ape_data))
 }
