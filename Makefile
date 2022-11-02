@@ -13,10 +13,10 @@ check_rel:
 	cargo check -r
 
 run_log:
-	RUST_LOG=actix_web=info cargo run
+	cargo run
 
 run_log_release:
-	RUST_LOG=actix_web=info cargo run -r
+	cargo run -r
 
 test:
 	cargo test

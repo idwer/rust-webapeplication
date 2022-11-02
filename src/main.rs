@@ -3,6 +3,8 @@ use actix_web::HttpServer;
 use actix_web::middleware::Logger;
 use actix_web::web;
 
+use std::env;
+
 mod lib;
 mod routes;
 
@@ -12,7 +14,9 @@ use crate::routes::ape_post::ape_to_json_post;
 
 #[actix_web::main]
 async fn main() -> std::io::Result<()> {
-     env_logger::init();
+    env::set_var("RUST_LOG", "actix_web=info");
+
+    env_logger::init();
 
     HttpServer::new(|| {
         App::new()
