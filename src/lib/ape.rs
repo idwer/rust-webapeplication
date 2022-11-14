@@ -3,8 +3,9 @@ use actix_web::web::Json;
 use crate::lib::structs::ApeIndexInput;
 use crate::lib::structs::ApeIndexOutput;
 
-fn ape_index(h: u32, w: u32) -> f32 {
-    w as f32 / h as f32
+// height and wingspan can be signed ints, the validator macro will handle input filtering
+fn ape_index(height: i16, wingspan: i16) -> f32 {
+    wingspan as f32 / height as f32
 }
 
 pub fn ape_index_from_json(ape_data: Json<ApeIndexInput>) -> ApeIndexOutput {
