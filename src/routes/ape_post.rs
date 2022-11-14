@@ -7,8 +7,7 @@ use validator::Validate;
 use crate::lib::ape::ape_index_from_json;
 use crate::lib::structs::ApeIndexInput;
 
-#[post("/ape")]
-async fn ape_to_json_post(ape_data: Json<ApeIndexInput>) -> impl Responder {
+pub async fn ape_to_json_post(ape_data: web::Json<ApeIndexInput>) -> impl Responder {
     let input = ape_data.validate();
 
     match input {
