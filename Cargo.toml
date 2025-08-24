@@ -6,8 +6,8 @@ edition = "2024"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-actix-web = "4.2.1"
-env_logger = "0.8"
-rocket = {version = "0.5.0-rc.2", features = ["json"]}
-serde = "1.0.145"
-validator = { version = "0.16", features = ["derive"] }
+actix-web = "4.11.0"
+env_logger = "0.11.8"
+rocket = {version = "0.5.1", features = ["json"]}
+serde = "1.0.219"
+validator = { version = "0.20.0", features = ["derive"] }
