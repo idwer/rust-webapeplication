@@ -1,6 +1,6 @@
-use actix_web::web::Json;
 use actix_web::HttpResponse;
 use actix_web::Responder;
+use actix_web::web::Json;
 use validator::Validate;
 
 use crate::lib::ape::ApeIndexInput;
