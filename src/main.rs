@@ -14,7 +14,9 @@ use crate::routes::http_404_handler::handle_404;
 
 #[actix_web::main]
 async fn main() -> std::io::Result<()> {
-    env::set_var("RUST_LOG", "actix_web=info");
+    unsafe {
+        env::set_var("RUST_LOG", "actix_web=info");
+    }
 
     env_logger::init();
 
