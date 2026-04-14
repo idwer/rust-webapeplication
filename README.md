@@ -10,7 +10,7 @@ https://en.wikipedia.org/wiki/Ape_index
 ```cargo run```
 
 # Using the endpoint:
-```curl --header 'Content-Type: application/json' http://127.0.0.1:8080/ape -X POST -d '{"height": 200, "wingspan": 200}'```
+```curl --header 'Content-Type: application/json' http://127.0.0.1:3000/ape -X POST -d '{"height": 200, "wingspan": 200}'```
 
 The endpoint will restrict input to reasonable values. Input, for height and wingspan, less than 1 or above 300 will be rejected.
 

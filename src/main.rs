@@ -28,7 +28,7 @@ async fn main() -> std::io::Result<()> {
             .route("/ape", web::get().to(ape_get_show_usage))
             .route("/ape", web::post().to(ape_to_json_post))
     })
-    .bind(("127.0.0.1", 8080))?
+    .bind(("127.0.0.1", 3000))?
     .run()
     .await
 }
