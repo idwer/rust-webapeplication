@@ -6,9 +6,9 @@ use validator::Validate;
 use crate::lib::ape::ApeIndexInput;
 
 pub async fn ape_to_json_post(ape_data: Json<ApeIndexInput>) -> impl Responder {
-    let input = ape_data.validate();
+    let validated_input = ape_data.validate();
 
-    match input {
+    match validated_input {
         Ok(_) => {
             let input = ApeIndexInput {
                 height: ape_data.height,
