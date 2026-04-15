@@ -6,18 +6,16 @@ use validator::Validate;
 use crate::lib::ape::ApeIndexInput;
 
 pub async fn ape_to_json_post(ape_data: Json<ApeIndexInput>) -> impl Responder {
-    let validated_input = ape_data.validate();
-
-    match validated_input {
+    match ape_data.validate() {
         Ok(_) => {
-            let input = ApeIndexInput {
+            let validated_input = ApeIndexInput {
                 height: ape_data.height,
                 wingspan: ape_data.wingspan,
             };
 
             HttpResponse::Ok()
                 .content_type("application/json")
-                .json(input.ape_index_from_json())
+                .json(validated_input.ape_index_from_json())
         }
 
         Err(err) => HttpResponse::BadRequest().body(err.to_string()),
