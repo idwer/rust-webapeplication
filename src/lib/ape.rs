@@ -2,7 +2,7 @@ use rocket::serde::Deserialize;
 use rocket::serde::Serialize;
 use validator::Validate;
 
-#[derive(Deserialize, Serialize, Validate)]
+#[derive(Deserialize, Validate)]
 pub struct ApeIndexInput {
     #[validate(range(
         min = 1,
@@ -18,7 +18,7 @@ pub struct ApeIndexInput {
     pub wingspan: i16,
 }
 
-#[derive(Deserialize, Serialize)]
+#[derive(Serialize)]
 pub struct ApeIndexOutput {
     pub height: i16,
     pub wingspan: i16,
