@@ -3,7 +3,7 @@ use actix_web::Responder;
 use actix_web::web::Json;
 use validator::Validate;
 
-use crate::lib::ape::ApeIndexInput;
+use crate::ape::ApeIndexInput;
 
 pub async fn ape_to_json_post(ape_data: Json<ApeIndexInput>) -> impl Responder {
     match ape_data.validate() {

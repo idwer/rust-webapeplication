@@ -5,7 +5,7 @@ use actix_web::web;
 
 use std::env;
 
-mod lib;
+mod ape;
 mod routes;
 
 use crate::routes::ape_get::ape_get_show_usage;
